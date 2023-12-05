@@ -1,0 +1,14 @@
+template:
+  name: Remote MS Reconcile
+  identifier: Remote_MS_Reconcile
+  versionLabel: "1"
+  type: MonitoredService
+  projectIdentifier: templatetesting2
+  orgIdentifier: cvng
+  tags: {}
+  spec:
+    serviceRef: <+input>
+    environmentRef: <+input>
+    type: Application
+    sources:
+      healthSources: []
