@@ -1,0 +1,31 @@
+template:
+  name: Remote MS Reconcile
+  identifier: Remote_MS_Reconcile
+  type: MonitoredService
+  projectIdentifier: templatetesting2
+  orgIdentifier: cvng
+  tags: {}
+  spec:
+    serviceRef: <+input>
+    environmentRef: <+input>
+    type: Application
+    sources:
+      healthSources:
+        - name: AppD
+          identifier: AppD
+          type: AppDynamics
+          spec:
+            applicationName: <+input>
+            tierName: <+input>
+            metricData:
+              Errors: true
+              Performance: true
+            metricDefinitions: []
+            feature: Application Monitoring
+            connectorRef: <+input>
+            metricPacks:
+              - identifier: Errors
+                metricThresholds: []
+              - identifier: Performance
+                metricThresholds: []
+  versionLabel: "2"
