@@ -11,4 +11,21 @@ template:
     environmentRef: <+input>
     type: Application
     sources:
-      healthSources: []
+      healthSources:
+        - name: AppD
+          identifier: AppD
+          type: AppDynamics
+          spec:
+            applicationName: <+input>
+            tierName: <+input>
+            metricData:
+              Errors: true
+              Performance: true
+            metricDefinitions: []
+            feature: Application Monitoring
+            connectorRef: <+input>
+            metricPacks:
+              - identifier: Errors
+                metricThresholds: []
+              - identifier: Performance
+                metricThresholds: []
